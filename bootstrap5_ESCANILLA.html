@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Activity 1: Bootstrap 5 Landing Page</title>
+
+    <!-- Bootstrap 5 LOCAL CSS -->
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card {
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card {
+            min-height: 220px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* DARK MODE */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .bg-light {
+            background-color: #1e1e1e !important;
+        }
+
+        body.dark-mode .card {
+            background-color: #242424;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #111 !important;
+        }
+
+        body.dark-mode .text-muted {
+            color: #bbbbbb !important;
+        }
+
+        body.dark-mode footer {
+            background-color: #000 !important;
+        }
+
+        body.dark-mode .form-control,
+        body.dark-mode .form-select {
+            background-color: #2b2b2b;
+            color: white;
+            border-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION BAR
+========================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#home">
+            Escanilla Tech
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing">Pricing</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#testimonials">
+                        Testimonials
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+                <li class="nav-item ms-lg-2">
+                    <button id="darkModeBtn"
+                            class="btn btn-outline-light btn-sm mt-1">
+                        Dark Mode
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+<header id="home" class="hero bg-light">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <span class="badge bg-primary mb-3">
+                    Bootstrap 5 Landing Page
+                </span>
+
+                <h1 class="display-3 fw-bold">
+                    Build Better Digital Experiences
+                </h1>
+
+                <p class="lead mt-3">
+                    Welcome to Escanilla Tech, a simple and responsive
+                    Bootstrap 5 landing page designed to provide
+                    modern digital solutions for individuals and businesses.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="#features"
+                       class="btn btn-primary btn-lg me-2">
+                        Explore Features
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-outline-secondary btn-lg">
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+
+                <div class="p-5 bg-primary text-white rounded-4 shadow">
+                    <div class="display-1">💻</div>
+                    <h3 class="mt-3">Technology Made Simple</h3>
+                    <p class="mb-0">
+                        Responsive. Modern. Easy to use.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+<section id="features">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="badge bg-primary">
+                Our Features
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Everything You Need
+            </h2>
+
+            <p class="text-muted">
+                Discover the features that make our platform useful,
+                responsive, and easy to customize.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- FEATURE 1 -->
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <div class="card feature-card h-100 border-0 shadow-sm">
+
+                    <div class="card-body text-center p-4">
+
+                        <div class="icon-box">
+                            📱
+                        </div>
+
+                        <h4 class="card-title">
+                            Responsive Design
+                        </h4>
+
+                        <p class="card-text text-muted">
+                            Our website automatically adjusts to
+                            different screen sizes including phones,
+                            tablets, and desktop computers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FEATURE 2 -->
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <div class="card feature-card h-100 border-0 shadow-sm">
+
+                    <div class="card-body text-center p-4">
+
+                        <div class="icon-box">
+                            ⚡
+                        </div>
+
+                        <h4 class="card-title">
+                            Fast Performance
+                        </h4>
+
+                        <p class="card-text text-muted">
+                            Optimized layouts and lightweight components
+                            provide a smooth and efficient browsing
+                            experience.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FEATURE 3 -->
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <div class="card feature-card h-100 border-0 shadow-sm">
+
+                    <div class="card-body text-center p-4">
+
+                        <div class="icon-box">
+                            ⚙️
+                        </div>
+
+                        <h4 class="card-title">
+                            Easy Customization
+                        </h4>
+
+                        <p class="card-text text-muted">
+                            Bootstrap components make it easy to
+                            customize the website according to
+                            different project requirements.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRICING
+========================= -->
+<section id="pricing" class="bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="badge bg-primary">
+                Pricing Plans
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                Choose Your Plan
+            </h2>
+
+            <p class="text-muted">
+                Select the plan that best fits your needs.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4 justify-content-center">
+
+
+            <!-- STARTER -->
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <div class="card pricing-card h-100 shadow-sm">
+
+                    <div class="card-body text-center p-4">
+
+                        <h4 class="fw-bold">
+                            Starter
+                        </h4>
+
+                        <h2 class="display-5 fw-bold my-3">
+                            ₱499
+                            <small class="fs-6 text-muted">
+                                /month
+                            </small>
+                        </h2>
+
+                        <p class="text-muted">
+                            Perfect for beginners and small projects.
+                        </p>
+
+                        <ul class="list-unstyled my-4">
+
+                            <li class="mb-2">✓ Basic Features</li>
+                            <li class="mb-2">✓ Responsive Design</li>
+                            <li class="mb-2">✓ Email Support</li>
+                            <li class="mb-2">✓ 5 GB Storage</li>
+
+                        </ul>
+
+                        <a href="#contact"
+                           class="btn btn-outline-primary w-100">
+                            Get Started
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRO -->
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <div class="card pricing-card h-100 shadow border-primary">
+
+                    <div class="card-body text-center p-4">
+
+                        <span class="badge bg-primary mb-2">
+                            Most Popular
+                        </span>
+
+                        <h4 class="fw-bold">
+                            Pro
+                        </h4>
+
+                        <h2 class="display-5 fw-bold my-3">
+                            ₱999
+                            <small class="fs-6 text-muted">
+                                /month
+                            </small>
+                        </h2>
+
+                        <p class="text-muted">
+                            Ideal for growing businesses and projects.
+                        </p>
+
+                        <ul class="list-unstyled my-4">
+
+                            <li class="mb-2">✓ All Starter Features</li>
+                            <li class="mb-2">✓ Advanced Features</li>
+                            <li class="mb-2">✓ Priority Support</li>
+                            <li class="mb-2">✓ 20 GB Storage</li>
+
+                        </ul>
+
+                        <a href="#contact"
+                           class="btn btn-primary w-100">
+                            Choose Pro
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ENTERPRISE -->
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <div class="card pricing-card h-100 shadow-sm">
+
+                    <div class="card-body text-center p-4">
+
+                        <h4 class="fw-bold">
+                            Enterprise
+                        </h4>
+
+                        <h2 class="display-5 fw-bold my-3">
+                            ₱1,999
+                            <small class="fs-6 text-muted">
+                                /month
+                            </small>
+                        </h2>
+
+                        <p class="text-muted">
+                            Designed for organizations with larger needs.
+                        </p>
+
+                        <ul class="list-unstyled my-4">
+
+                            <li class="mb-2">✓ All Pro Features</li>
+                            <li class="mb-2">✓ Premium Support</li>
+                            <li class="mb-2">✓ Unlimited Storage</li>
+                            <li class="mb-2">✓ Custom Solutions</li>
+
+                        </ul>
+
+                        <a href="#contact"
+                           class="btn btn-outline-primary w-100">
+                            Contact Sales
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+<section id="testimonials">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="badge bg-primary">
+                Testimonials
+            </span>
+
+            <h2 class="fw-bold mt-2">
+                What Our Users Say
+            </h2>
+
+        </div>
+
+
+        <div id="testimonialCarousel"
+             class="carousel slide"
+             data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+
+                <!-- TESTIMONIAL 1 -->
+                <div class="carousel-item active">
+
+                    <div class="card testimonial-card shadow-sm border-0">
+
+                        <div class="card-body text-center p-5">
+
+                            <div class="fs-1">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+
+                            <p class="lead mt-3">
+                                "The website is simple, responsive,
+                                and very easy to navigate."
+                            </p>
+
+                            <h5 class="fw-bold">
+                                Maria Santos
+                            </h5>
+
+                            <p class="text-muted">
+                                Small Business Owner
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TESTIMONIAL 2 -->
+                <div class="carousel-item">
+
+                    <div class="card testimonial-card shadow-sm border-0">
+
+                        <div class="card-body text-center p-5">
+
+                            <div class="fs-1">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+
+                            <p class="lead mt-3">
+                                "The responsive design works perfectly
+                                on my phone and computer."
+                            </p>
+
+                            <h5 class="fw-bold">
+                                John Reyes
+                            </h5>
+
+                            <p class="text-muted">
+                                IT Student
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TESTIMONIAL 3 -->
+                <div class="carousel-item">
+
+                    <div class="card testimonial-card shadow-sm border-0">
+
+                        <div class="card-body text-center p-5">
+
+                            <div class="fs-1">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+
+                            <p class="lead mt-3">
+                                "A clean and modern landing page
+                                with useful features."
+                            </p>
+
+                            <h5 class="fw-bold">
+                                Angela Cruz
+                            </h5>
+
+                            <p class="text-muted">
+                                Freelance Designer
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAROUSEL CONTROLS -->
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon bg-dark rounded-circle">
+                </span>
+
+                <span class="visually-hidden">
+                    Previous
+                </span>
+
+            </button>
+
+
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-control-next-icon bg-dark rounded-circle">
+                </span>
+
+                <span class="visually-hidden">
+                    Next
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+<section id="contact" class="bg-light">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="text-center mb-5">
+
+                    <span class="badge bg-primary">
+                        Contact Us
+                    </span>
+
+                    <h2 class="fw-bold mt-2">
+                        Get In Touch
+                    </h2>
+
+                    <p class="text-muted">
+                        Have a question? Send us a message.
+                    </p>
+
+                </div>
+
+
+                <form id="contactForm">
+
+
+                    <!-- NAME -->
+                    <div class="mb-3">
+
+                        <label for="name"
+                               class="form-label">
+                            Full Name
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="name"
+                               name="name"
+                               placeholder="Enter your full name"
+                               required>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="mb-3">
+
+                        <label for="email"
+                               class="form-label">
+                            Email Address
+                        </label>
+
+                        <input type="email"
+                               class="form-control"
+                               id="email"
+                               name="email"
+                               placeholder="Enter your email"
+                               required>
+
+                    </div>
+
+
+                    <!-- SUBJECT -->
+                    <div class="mb-3">
+
+                        <label for="subject"
+                               class="form-label">
+                            Subject
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               id="subject"
+                               name="subject"
+                               placeholder="Enter the subject"
+                               required>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+                    <div class="mb-3">
+
+                        <label for="message"
+                               class="form-label">
+                            Message
+                        </label>
+
+                        <textarea class="form-control"
+                                  id="message"
+                                  name="message"
+                                  rows="5"
+                                  placeholder="Write your message"
+                                  required></textarea>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="bg-dark text-white text-center py-4">
+
+    <div class="container">
+
+        <p class="mb-1">
+            © 2026 Escanilla Tech
+        </p>
+
+        <small>
+            Bootstrap 5 Landing Page Activity
+        </small>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap 5 LOCAL JavaScript -->
+<script src="bootstrap5/js/bootstrap.bundle.min.js"></script>
+
+<script src="sweetalert2.all.min.js"></script>
+
+
+<!-- =========================
+     CUSTOM JAVASCRIPT
+========================= -->
+<script>
+
+    // DARK / LIGHT MODE
+    const darkModeBtn = document.getElementById("darkModeBtn");
+
+    darkModeBtn.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+
+            darkModeBtn.textContent = "Light Mode";
+
+        } else {
+
+            darkModeBtn.textContent = "Dark Mode";
+
+        }
+
+    });
+
+
+    // CONTACT FORM
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        Swal.fire({
+            title: "Thank You!",
+            text: "Your message has been submitted successfully.",
+            icon: "success",
+            confirmButtonText: "OK"
+        });
+        
+        contactForm.reset();
+
+    });
+
+</script>
+
+</body>
+</html>
